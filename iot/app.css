@@ -1,0 +1,46 @@
+body {
+	font-size: 82px;
+	font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+	text-align: center;
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+	background: #0e203e;
+	color: white;
+	padding: 0 30px;
+	font-weight: 100;
+	margin: 0;
+}
+
+#waiting-message .status {
+	margin-top: 10px;
+	font-size: 50px;
+	margin-bottom: 20px;
+}
+
+#in-message,
+#out-message {
+	display: none;
+}
+
+.in-bg {
+	background: #4a940c;
+	color: white;
+}
+
+.out-bg {
+	background: #c11e1e;
+}
+
+.tip {
+	font-size: 17px;
+	color: #899cbb;
+	font-weight: normal;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+
+.hidden {
+	display: none;
+}

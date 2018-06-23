@@ -1,0 +1,16 @@
+{
+	"appName": "adethum.aragonpm.eth",
+	"version": "1.0.0",
+	"roles": [{
+			"name": "Give access role",
+			"id": "ALLOW_ROLE",
+			"params": []
+		},
+		{
+			"name": "Revoke access role",
+			"id": "REVOKE_ROLE",
+			"params": []
+		}
+	],
+	"path": "contracts/Adethum.sol"
+}
