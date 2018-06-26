@@ -22,68 +22,41 @@ let mainWindow;
 let appStatus;
 
 function initApp() {
-  initHttpApp();
+  initAdethumService();
   createWindow();
 }
 
-function initHttpApp() {
-  expressApp.post("/", function(req, res) {
-    console.log("got request");
-    // console.log(req);
-    let signature = req.body.signature;
-    let address = req.body.address;
-    let message = req.body.message;
+function initAdethumService() {
+  ipcMain.on("scan-initiated", (event, arg) => {
+    let address = arg;
+    accessService
+      .checkAccess(address)
 
-    const signer = EthCrypto.recover(
-      signature,
-      EthCrypto.hash.keccak256(message)
-    );
-
-    if (signer == address) {
-      console.log("Signature validated!", address);
-
-      accessService
-        .checkAccess(address)
-
-        .then(data => {
-          console.log("acess ok", data);
-          if (data) {
-            responseService.respond("{}", res);
-            appStatus = {
-              allowed: true,
-              msg: "Allowed"
-            };
-          } else {
-            responseService.error(null, res);
-            appStatus = {
-              allowed: false,
-              msg: "Not on blockchain"
-            };
-          }
-        })
-        .catch(err => {
-          console.log("acess err", err);
-          responseService.error(err, res);
+      .then(data => {
+        console.log("acess ok", data);
+        if (data) {
+          appStatus = {
+            allowed: true,
+            msg: "Allowed"
+          };
+          event.sender.send("asynchronous-reply", appStatus);
+        } else {
           appStatus = {
             allowed: false,
-            msg: "Not on blockchain"
+            msg: "Denied"
           };
-        });
-    } else {
-      // signature validation failed
-      appStatus = {
-        allowed: false,
-        msg: "Signature validation failed"
-      };
-
-      responseService.error(err, res);
-    }
-
-    // res.send('Ok');
-  });
-
-  expressApp.listen(8000, function() {
-    console.log("Example app listening on port 8000!");
+          event.sender.send("asynchronous-reply", appStatus);
+        }
+      })
+      .catch(err => {
+        console.log("access err", err);
+        responseService.error(err, res);
+        appStatus = {
+          allowed: false,
+          msg: "Denied"
+        };
+        event.sender.send("asynchronous-reply", appStatus);
+      });
   });
 
   ipcMain.on("asynchronous-message", (event, arg) => {
@@ -99,7 +72,7 @@ function createWindow() {
   // Create the browser window.
   mainWindow = new BrowserWindow({ width: 800, height: 600 });
 
-  mainWindow.setFullScreen(true);
+  // TODO: fullscreen only in IoT - mainWindow.setFullScreen(true);
   // and load the index.html of the app.
   mainWindow.loadURL(`file://${__dirname}/index.html`);
 

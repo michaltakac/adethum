@@ -6,7 +6,7 @@ body {
 	height: 100vh;
 	justify-content: center;
 	align-items: center;
-	background: #0e203e;
+	background: #190b4d;
 	color: white;
 	padding: 0 30px;
 	font-weight: 100;
@@ -34,11 +34,10 @@ body {
 }
 
 .tip {
-	font-size: 17px;
-	color: #899cbb;
+	font-size: 15px;
+	color: #a3a9b3;
 	font-weight: normal;
 	text-transform: uppercase;
-	letter-spacing: 3px;
 }
 
 .hidden {

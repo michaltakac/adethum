@@ -1,5 +1,28 @@
 const { ipcRenderer } = require("electron");
+var QRCode = require("qrcode");
+const Instascan = require("instascan");
 let interval, timeout;
+
+let scanner = new Instascan.Scanner({
+  video: document.getElementById("preview")
+});
+
+scanner.addListener("scan", function(content) {
+  console.log(content);
+  ipcRenderer.send("scan-initiated", content.split(":")[1]);
+});
+
+Instascan.Camera.getCameras()
+  .then(function(cameras) {
+    if (cameras.length > 0) {
+      scanner.start(cameras[0]);
+    } else {
+      console.error("No cameras found.");
+    }
+  })
+  .catch(function(e) {
+    console.error(e);
+  });
 
 function ready(fn) {
   if (

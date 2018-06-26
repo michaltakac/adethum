@@ -14,7 +14,10 @@
 		"ethers": "^3.0.17",
 		"ethjs": "^0.4.0",
 		"express": "^4.16.3",
+		"instascan": "^1.0.0",
 		"jquery": "^3.3.1",
+		"qrcode": "^1.2.0",
+		"react-qr-reader": "^2.1.0",
 		"scrypt": "^6.0.3",
 		"web3": "^1.0.0-beta.34"
 	}
