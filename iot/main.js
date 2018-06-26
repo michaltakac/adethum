@@ -49,8 +49,7 @@ function initAdethumService() {
         }
       })
       .catch(err => {
-        console.log("access err", err);
-        responseService.error(err, res);
+        console.log("access err", err)
         appStatus = {
           allowed: false,
           msg: "Denied"
