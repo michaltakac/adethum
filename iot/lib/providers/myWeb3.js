@@ -1,6 +1,6 @@
 var Web3 = require("web3");
 var Eth = require("ethjs");
-var ABI = require("../lib/abi");
+var ABI = require("../abi");
 
 var ethers = require("ethers");
 

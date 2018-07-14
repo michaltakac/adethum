@@ -1,6 +1,6 @@
 "use strict";
 
-var myWeb3 = require("../providers/myWeb3");
+var myWeb3 = require("./myWeb3");
 
 exports.checkAccess = function(addr) {
   return new Promise((resolve, reject) => {

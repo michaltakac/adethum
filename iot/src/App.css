@@ -1,0 +1,30 @@
+#waiting-message .status {
+  margin-top: 10px;
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+#in-message,
+#out-message {
+  display: none;
+}
+
+.in-bg {
+  background: #4a940c;
+  color: white;
+}
+
+.out-bg {
+  background: #c11e1e;
+}
+
+.tip {
+  font-size: 15px;
+  color: #a3a9b3;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.hidden {
+  display: none;
+}

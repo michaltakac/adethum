@@ -1,0 +1,14 @@
+body {
+  font-size: 82px;
+  font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+  text-align: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: #190b4d;
+  color: white;
+  padding: 0 30px;
+  font-weight: 100;
+  margin: 0;
+}
