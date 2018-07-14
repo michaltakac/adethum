@@ -29,8 +29,6 @@ function goHome() {
 
   removeClass(body, "out-bg");
   removeClass(body, "in-bg");
-
-  // addClass(body, 'tip');
 }
 
 function addClass(el, className) {
@@ -64,15 +62,18 @@ class App extends Component {
       });
 
     scanner.addListener("scan", content => {
-      console.log(content);
-      console.log(content.split(":")[1]);
-      fetch("http://localhost:8080/qr", {
+      fetch(`http://192.168.1.21:8080/access`, {
         method: "POST",
-        address: content.split(":")[1]
+        body: JSON.stringify({
+          address: content.split(":")[1]
+        }),
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json"
+        }
       })
         .then(res => res.json())
         .then(res => {
-          console.log(res);
           this.updateUI(res);
         })
         .catch(e => console.log(e));
