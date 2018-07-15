@@ -1,39 +1,39 @@
 .app-title {
-    font-size: 34px;
-    border-bottom: 1px solid #dbe8ef;
-    margin-bottom: 30px;
+  font-size: 34px;
+  border-bottom: 1px solid #dbe8ef;
+  margin-bottom: 30px;
 }
 
 .section-title {
-    font-size: 25px;
-    margin-bottom: 15px;
+  font-size: 25px;
+  margin-bottom: 15px;
 }
 
 table {
-    border-collapse: collapse;
-    width: 100%;
+  border-collapse: collapse;
+  width: 100%;
 }
 
 .table thead {
-    background: #445863;
-    color: #f7fbfd;
+  background: #445863;
+  color: #f7fbfd;
 }
 
 .table th {
-    text-align: left;
-    padding: 10px;
+  text-align: left;
+  padding: 10px;
 }
 
 .table tr {
-    order-bottom: 1px solid #dbe8ef;
+  order-bottom: 1px solid #dbe8ef;
 }
 
-.table tr:nth-child(odd){
-    background: #f1f6f9;
+.table tr:nth-child(odd) {
+  background: #f1f6f9;
 }
 
-.table tr td{
-    padding: 10px;
+.table tr td {
+  padding: 10px;
 }
 
 .form {
@@ -43,7 +43,7 @@ table {
   background: #f2fbff;
 }
 
-.form input[type="text"]{
+.form input[type="text"] {
   width: 500px;
 }
 

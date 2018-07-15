@@ -1,0 +1,28 @@
+{
+  "name": "adethum-server",
+  "version": "0.1.0",
+  "description": "Adethum access granting service",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "adethum",
+    "access",
+    "dao",
+    "ethereum",
+    "iot"
+  ],
+  "author": "Michal Takac <takacmichal92@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "ethers": "^3.0.25",
+    "scrypt": "^6.0.3",
+    "web3": "^1.0.0-beta.34"
+  }
+}
