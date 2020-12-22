@@ -24,7 +24,7 @@ Aragon will do everything for you, and you'll be provided with the nice front-en
 
 In the DAO app, you can grant access to some ETH addresses. You can add one from your Metamask and print the QR code of it to test later.
 
-1.  Update the `CONTRACT_ADDR` and `NODE_ADDR` in `server/config.js` with the contract address to your Adethum app (`http://localhost:3000/#/{DAO_ADDRESS}/{ADETHUM_CONTRACT_ADDRESS}`) and IP of your node (usualy it's the machine where DAO is running)
+1.  Update the `CONTRACT_ADDR` and `NODE_ADDR` in `server/config.js` with the contract address to your Adethum app (`http://localhost:3000/#/{DAO_ADDRESS}/{ADETHUM_CONTRACT_ADDRESS}`) and IP of your node (usually it's the machine where DAO is running)
 
 1.  Run the Adethum access granting service
 
